@@ -24,7 +24,7 @@ npm run dev
 ### Session
 - **Method:** GET
 - **Endpoint:** /auth/session
-- **Description:** Get information about the user's session.
+- **Description:** Check the session period for auto login.
 
 ### Log Out
 - **Method:** GET
@@ -40,8 +40,8 @@ npm run dev
 
 ### Get Catalog
 - **Method:** GET
-- **Endpoint:** /buyer/get_catalog
-- **Description:** Get the catalog of items available for purchase.
+- **Endpoint:** /buyer/get_catalog?seller_id=_id
+- **Description:** Get the catalog of items of a particular seller.
 
 ### Get Orders
 - **Method:** GET
@@ -58,9 +58,9 @@ npm run dev
 ### Get Orders
 - **Method:** GET
 - **Endpoint:** /seller/get_orders
-- **Description:** Retrieve the seller's order history.
+- **Description:** Retrieve the seller's received orders.
 
 ### Post Items
 - **Method:** POST
 - **Endpoint:** /seller/post_items
-- **Description:** Add new items to the seller's inventory.
+- **Description:** Add new items to the seller's catalog.
