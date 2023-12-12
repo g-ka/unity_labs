@@ -4,7 +4,7 @@
   "description": "Unity_intern_backend",
   "main": "index.js",
   "scripts": {
-    "packages": "npm install",
+    "prebuild": "npm install",
     "dev": "nodemon server.js",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
