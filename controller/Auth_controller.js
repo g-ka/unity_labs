@@ -81,8 +81,8 @@ const login_handler = async (req, res) =>
     exist.refresh_token = refresh_token;
     await exist.save();
 
-    // res.cookie('jwt', refresh_token, { httpOnly: true, secure: true, sameSite: 'None', maxAge: 60*1000 }); // prduction
-    res.cookie('jwt', refresh_token, { httpOnly: true, secure: false, sameSite: 'None', maxAge: 365*24*60*60*1000 }); // devlopment
+    // res.cookie('jwt', refresh_token, { httpOnly: true, secure: true, sameSite: 'None', maxAge: 60*1000 }); // production
+    res.cookie('jwt', refresh_token, { httpOnly: true, secure: false, sameSite: 'None', maxAge: 365*24*60*60*1000 }); // development
     return res.sendStatus(200);
   }
   catch(err)
@@ -102,7 +102,7 @@ const session_handler = async (req, res) =>
     if(!exist) 
     {
       // res.clearCookie('jwt', refresh_token, { httpOnly: true, secure: true , sameSite: 'None' }); // production
-      res.clearCookie('jwt', refresh_token, { httpOnly: true, secure: false , sameSite: 'None' }); // devlopment
+      res.clearCookie('jwt', refresh_token, { httpOnly: true, secure: false , sameSite: 'None' }); // development
       return res.sendStatus(100);
     }
 
@@ -141,7 +141,7 @@ const log_out_handler = async (req, res) =>
     }
 
     // res.clearCookie('jwt', refresh_token, { httpOnly: true, secure: true , sameSite: 'None' }); // production
-    res.clearCookie('jwt', refresh_token, { httpOnly: true, secure: false , sameSite: 'None' }); // devlopment
+    res.clearCookie('jwt', refresh_token, { httpOnly: true, secure: false , sameSite: 'None' }); // development
     return res.sendStatus(200);
   }
   catch(err)
