@@ -39,7 +39,6 @@ const get_catalog_handler = async (req, res) =>
   }
   catch(err)
   {
-    console.log(err.message);
     return res.sendStatus(500);
   }
 };
@@ -95,7 +94,6 @@ const post_orders_handler = async (req, res) =>
   } 
   catch(err)
   {
-    console.log(err.message);
     return res.sendStatus(500);
   }  
 };
